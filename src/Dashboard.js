@@ -4,8 +4,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Chart from "./Chart";
-import Deposits from "./Deposits";
-import Orders from "./Orders";
+import TotalTonnage from "./TotalTonnage";
+import Traffic from "./Traffic";
 
 const drawerWidth = 240;
 
@@ -71,16 +71,16 @@ export default function Dashboard() {
           <Chart />
         </Paper>
       </Grid>
-      {/* Recent Deposits */}
+      {/* Total Tonnage */}
       <Grid item xs={12} md={4} lg={3}>
         <Paper className={fixedHeightPaper}>
-          <Deposits />
+          <TotalTonnage />
         </Paper>
       </Grid>
       {/* Recent Orders */}
       <Grid item xs={12}>
         <Paper className={classes.paper}>
-          <Orders />
+          <Traffic />
         </Paper>
       </Grid>
     </Grid>

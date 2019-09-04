@@ -65,7 +65,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Orders() {
+export default function Traffic() {
   const classes = useStyles();
   return (
     <React.Fragment>

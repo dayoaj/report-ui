@@ -17,6 +17,9 @@ import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import Dashboard from "./Dashboard";
+import ReportQuery from "./ReportQuery";
+import Forms from "./Forms";
+import Agents from "./Agents";
 import { mainListItems, secondaryListItems } from "./listItems";
 function Copyright() {
   return (
@@ -150,7 +153,7 @@ export default function AppShell() {
             noWrap
             className={classes.title}
           >
-            Dashboard
+            Report System
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -181,7 +184,10 @@ export default function AppShell() {
         <Container maxWidth="lg" className={classes.container}>
           <Switch>
             <Route exact path="/" render={props => <Dashboard />} />
-            {/* <Route exact path="/upload" component={StaffListUpload} /> */}
+            <Route exact path="/dashboard" render={props => <Dashboard />} />
+            <Route exact path="/agents" component={Agents} />
+            <Route exact path="/query" component={ReportQuery} />
+            <Route exact path="/Forms" component={Forms} />
           </Switch>
         </Container>
         <Copyright />

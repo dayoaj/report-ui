@@ -8,12 +8,12 @@ import Typography from "@material-ui/core/Typography";
 import Title from "./Title";
 
 const useStyles = makeStyles({
-  depositContext: {
+  tonnageContext: {
     flex: 1
   }
 });
 
-export default function Deposits() {
+export default function TotalTonnage() {
   const classes = useStyles();
   return (
     <React.Fragment>
@@ -21,7 +21,7 @@ export default function Deposits() {
       <Typography component="p" variant="h4">
         3,024.00 Tons
       </Typography>
-      <Typography color="textSecondary" className={classes.depositContext}>
+      <Typography color="textSecondary" className={classes.tonnageContext}>
         on 03 September, 2019
       </Typography>
       <div>
