@@ -17,7 +17,14 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     overflow: "auto",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
+    maxWidth: "70%",
+    alignSelf: "center"
+  },
+  flex: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -55,9 +62,9 @@ export default function PilotageChit() {
   };
 
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={3} justify="center" alignItems="center">
       {/* Create PilotageChit for manually filled data*/}
-      <Grid item xs={12}>
+      <Grid item xs={12} className={classes.flex}>
         <Paper className={classes.paper}>
           <Typography component="h1" variant="h5">
             Pilotage Chit
@@ -131,7 +138,6 @@ export default function PilotageChit() {
                   id="flag"
                   label="Flag"
                   name="flag"
-                  autoComplete
                 />
               </Grid>
               <Grid item xs={6} sm={3}>
@@ -141,7 +147,7 @@ export default function PilotageChit() {
                   // className={clsx(classes.margin, classes.textField)}
                   variant="outlined"
                   label="DWT"
-                  value={values.dwt} 
+                  value={values.dwt}
                   onChange={handleChange("dwt")}
                   helperText="DWT"
                   InputProps={{
@@ -204,7 +210,6 @@ export default function PilotageChit() {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  autoComplete
                   value={values.vesselLocation}
                   onChange={handleChange("vesselLocation")}
                   name="vesselLocation"
@@ -225,7 +230,6 @@ export default function PilotageChit() {
                   id="rtnNo"
                   label="Rotation Number"
                   name="rtnNo"
-                  autoComplete
                 />
               </Grid>
             </Grid>
