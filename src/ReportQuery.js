@@ -177,8 +177,7 @@ export default function Dashboard() {
               </Typography>
             </object>
           )}
-          ;
-        </Paper>
+        </Paper> 
       </Grid>
     </Grid>
   );

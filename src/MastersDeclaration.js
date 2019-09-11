@@ -17,6 +17,20 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     overflow: "auto",
     flexDirection: "column"
+  },
+  main: {
+    maxWidth: "75%",
+    alignSelf: "center"
+  },
+  flex: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  buttons: {
+    display: "flex",
+    justifyContent: "flex-end",
+    marginTop: theme.spacing(2)
   }
 }));
 
@@ -52,8 +66,8 @@ export default function MastersDeclaration() {
 
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12}>
-        <main className={classes.layout}>
+      <Grid item xs={12} className={classes.flex}>
+        <main className={classes.main}>
           <Paper className={classes.paper}>
             <Typography component="h1" variant="h4" align="center">
               Masters Declaration
@@ -66,7 +80,7 @@ export default function MastersDeclaration() {
               ))}
             </Stepper>
             <React.Fragment>
-              {activeStep === steps.length ? (
+              {activeStep === steps.length0 ? (
                 <React.Fragment>
                   <Typography variant="h5" gutterBottom>
                     Form Saved Successfully
@@ -87,7 +101,7 @@ export default function MastersDeclaration() {
                       onClick={handleNext}
                       className={classes.button}
                     >
-                      {activeStep === steps.length - 1 ? "Submit Form" : "Next"}
+                      {activeStep === steps.length - 1 ? "Update Form" : "Next"}
                     </Button>
                   </div>
                 </React.Fragment>
