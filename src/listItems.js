@@ -101,12 +101,40 @@ export function MainListItems() {
               <ListItemText primary="Data of Traffic" variant="body1" />
             </ListItem>
           </NavLink>
-          <ListItem button className={classes.nested}>
-            <ListItemText primary="Nationality of Vessels" variant="body2" />
-          </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemText primary="Inward Container Traffic" variant="body2" />
-          </ListItem>
+          <NavLink
+            to="#"
+            activeStyle={{
+              color: "#fdd835",
+              textDecoration: "none"
+            }}
+            style={{
+              textDecoration: "none",
+              color: "#616161"
+            }}
+          >
+            <ListItem button className={classes.nested}>
+              <ListItemText primary="Nationality of Vessels" variant="body1" />
+            </ListItem>
+          </NavLink>
+
+          <NavLink
+            to="#"
+            activeStyle={{
+              color: "#fdd835",
+              textDecoration: "none"
+            }}
+            style={{
+              textDecoration: "none",
+              color: "#616161"
+            }}
+          >
+            <ListItem button className={classes.nested}>
+              <ListItemText
+                primary="Inward Container Traffic"
+                variant="body1"
+              />
+            </ListItem>
+          </NavLink>
         </List>
       </Collapse>
 
