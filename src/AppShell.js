@@ -20,13 +20,16 @@ import Dashboard from "./Dashboard";
 import ReportQuery from "./ReportQuery";
 import PilotageChit from "./PilotageChit";
 import MastersDeclaration from "./MastersDeclaration";
-import Agents from "./Agents";
+import Profile from "./Profile";
+import ProfileMenu from "./ProfileMenu";
+import GenericReport from "./GenericReport";
 import { MainListItems, SecondaryListItems } from "./listItems";
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
+      <Link color="inherit" href="https://www.nigerianports.gov.ng/">
         ICT, Nigerian Ports Authority
       </Link>{" "}
       {new Date().getFullYear()}
@@ -162,6 +165,7 @@ export default function AppShell() {
               <NotificationsIcon />
             </Badge>
           </IconButton>
+          <ProfileMenu />
         </Toolbar>
       </AppBar>
       <Drawer
@@ -191,7 +195,7 @@ export default function AppShell() {
           <Switch>
             <Route exact path="/" render={props => <Dashboard />} />
             <Route exact path="/dashboard" render={props => <Dashboard />} />
-            <Route exact path="/agents" component={Agents} />
+            <Route exact path="/agents" component={Profile} />
             <Route exact path="/query" component={ReportQuery} />
             <Route exact path="/PilotageChit" component={PilotageChit} />
             <Route
@@ -199,6 +203,7 @@ export default function AppShell() {
               path="/MastersDeclaration"
               component={MastersDeclaration}
             />
+            <Route exact path="/GenericReport" component={GenericReport} />
           </Switch>
         </Container>
         <Copyright />
