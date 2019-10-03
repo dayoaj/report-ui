@@ -187,24 +187,60 @@ export function SecondaryListItems() {
   return (
     <div>
       <ListSubheader inset>Saved reports</ListSubheader>
-      <ListItem button>
-        <ListItemIcon>
-          <AssignmentIcon />
-        </ListItemIcon>
-        <ListItemText primary="Current month" />
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon>
-          <AssignmentIcon />
-        </ListItemIcon>
-        <ListItemText primary="Last quarter" />
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon>
-          <AssignmentIcon />
-        </ListItemIcon>
-        <ListItemText primary="Year End" />
-      </ListItem>
+      <NavLink
+        to="/GenericReport"
+        activeStyle={{
+          color: "#fdd835",
+          textDecoration: "none"
+        }}
+        style={{
+          textDecoration: "none",
+          color: "#616161"
+        }}
+      >
+        <ListItem button>
+          <ListItemIcon>
+            <AssignmentIcon />
+          </ListItemIcon>
+          <ListItemText primary="Current month" />
+        </ListItem>
+      </NavLink>
+      <NavLink
+        to="#"
+        activeStyle={{
+          color: "#fdd835",
+          textDecoration: "none"
+        }}
+        style={{
+          textDecoration: "none",
+          color: "#616161"
+        }}
+      >
+        <ListItem button>
+          <ListItemIcon>
+            <AssignmentIcon />
+          </ListItemIcon>
+          <ListItemText primary="Last quarter" />
+        </ListItem>
+      </NavLink>
+      <NavLink
+        to="#"
+        activeStyle={{
+          color: "#fdd835",
+          textDecoration: "none"
+        }}
+        style={{
+          textDecoration: "none",
+          color: "#616161"
+        }}
+      >
+        <ListItem button>
+          <ListItemIcon>
+            <AssignmentIcon />
+          </ListItemIcon>
+          <ListItemText primary="Year End" />
+        </ListItem>
+      </NavLink>
     </div>
   );
 }
