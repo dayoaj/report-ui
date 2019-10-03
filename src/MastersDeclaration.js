@@ -80,7 +80,7 @@ export default function MastersDeclaration() {
               ))}
             </Stepper>
             <React.Fragment>
-              {activeStep === steps.length0 ? (
+              {activeStep === steps.length ? (
                 <React.Fragment>
                   <Typography variant="h5" gutterBottom>
                     Form Saved Successfully
