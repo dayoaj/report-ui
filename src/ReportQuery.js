@@ -172,12 +172,10 @@ export default function Dashboard() {
               height="820"
               style={{ overflow: "auto" }}
             >
-              <Typography variant="body1" component="body1">
-                Display Pdf
-              </Typography>
+              <Typography variant="body1">Display Pdf</Typography>
             </object>
           )}
-        </Paper> 
+        </Paper>
       </Grid>
     </Grid>
   );
