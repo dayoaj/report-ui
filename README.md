@@ -1,6 +1,6 @@
 ## UI for Reporting System
 
-Check Life Code at: https://kmdcz.csb.app/
+Check Life Demo at: https://kmdcz.csb.app/
 
 
 ## Available Scripts
