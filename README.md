@@ -1,6 +1,6 @@
 ## UI for Reporting System
 
-Check Life Demo at: https://kmdcz.csb.app/
+Check Life Demo at: https://odn8k.csb.app/
 
 
 ## Available Scripts
