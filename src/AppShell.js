@@ -18,14 +18,18 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import Dashboard from "./Dashboard";
 import ReportQuery from "./ReportQuery";
-import Forms from "./Forms";
-import Agents from "./Agents";
-import { mainListItems, secondaryListItems } from "./listItems";
+import PilotageChit from "./PilotageChit";
+import MastersDeclaration from "./MastersDeclaration";
+import Profile from "./Profile";
+import ProfileMenu from "./ProfileMenu";
+import GenericReport from "./GenericReport";
+import { MainListItems, SecondaryListItems } from "./listItems";
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
+      <Link color="inherit" href="https://twitter.com/dayo_aj">
         Dayo AJ
       </Link>{" "}
       {new Date().getFullYear()}
@@ -119,6 +123,7 @@ const useStyles = makeStyles(theme => ({
 export default function AppShell() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -160,6 +165,7 @@ export default function AppShell() {
               <NotificationsIcon />
             </Badge>
           </IconButton>
+          <ProfileMenu />
         </Toolbar>
       </AppBar>
       <Drawer
@@ -175,9 +181,13 @@ export default function AppShell() {
           </IconButton>
         </div>
         <Divider />
-        <List>{mainListItems}</List>
+        <List>
+          <MainListItems />
+        </List>
         <Divider />
-        <List>{secondaryListItems}</List>
+        <List>
+          <SecondaryListItems />
+        </List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
@@ -185,9 +195,15 @@ export default function AppShell() {
           <Switch>
             <Route exact path="/" render={props => <Dashboard />} />
             <Route exact path="/dashboard" render={props => <Dashboard />} />
-            <Route exact path="/agents" component={Agents} />
+            <Route exact path="/agents" component={Profile} />
             <Route exact path="/query" component={ReportQuery} />
-            <Route exact path="/Forms" component={Forms} />
+            <Route exact path="/PilotageChit" component={PilotageChit} />
+            <Route
+              exact
+              path="/MastersDeclaration"
+              component={MastersDeclaration}
+            />
+            <Route exact path="/GenericReport" component={GenericReport} />
           </Switch>
         </Container>
         <Copyright />

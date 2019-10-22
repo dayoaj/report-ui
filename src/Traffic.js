@@ -12,50 +12,88 @@ import TableRow from "@material-ui/core/TableRow";
 import Title from "./Title";
 
 // Generate Order Data
-function createData(id, date, name, shipTo, paymentMethod, amount) {
-  return { id, date, name, shipTo, paymentMethod, amount };
+function createData(
+  id,
+  vesselName,
+  rNo,
+  regTonnage,
+  agent,
+  berthed,
+  sailed,
+  amountPaid
+) {
+  return {
+    id,
+    vesselName,
+    rNo,
+    regTonnage,
+    agent,
+    berthed,
+    sailed,
+    amountPaid
+  };
 }
 
 const rows = [
   createData(
     0,
-    "16 Mar, 2019",
-    "Elvis Presley",
-    "Tupelo, MS",
-    "VISA ⠀•••• 3719",
-    312.44
+    "LNG BONNY 11",
+    "16/1049",
+    115995,
+    "Fountain",
+    "31-Dec",
+    "2-Jan",
+    437572.01
   ),
   createData(
     1,
-    "16 Mar, 2019",
-    "Paul McCartney",
-    "London, UK",
-    "VISA ⠀•••• 2574",
-    866.99
+    "LNG AKWA IBOM",
+    "16/1072",
+    115993,
+    "Fountain",
+    "1-Jan",
+    "3-Jan",
+    379735.51
   ),
   createData(
     2,
-    "16 Mar, 2019",
-    "Tom Scholz",
-    "Boston, MA",
-    "MC ⠀•••• 1253",
-    100.81
+    "LNG RIVER ORASHI",
+    "16/1077",
+    97874,
+    "Integrated",
+    "4-Jan",
+    "5-Jan",
+    364880.87
   ),
   createData(
     3,
-    "16 Mar, 2019",
-    "Michael Jackson",
-    "Gary, IN",
-    "AMEX ⠀•••• 2000",
-    654.39
+    "LNG BORNO",
+    "16/1076",
+    97874,
+    "Internship",
+    "5-Jan",
+    "6-Jan",
+    3722166.68
   ),
   createData(
     4,
-    "15 Mar, 2019",
-    "Bruce Springsteen",
-    "Long Branch, NJ",
-    "VISA ⠀•••• 5919",
-    212.79
+    "LNG CROSS RIVER",
+    "16/1073",
+    115995,
+    "Fountain",
+    "6-Jan",
+    "7-Jan",
+    379969.87
+  ),
+  createData(
+    5,
+    "LNG RIVERS",
+    "17/013",
+    115995,
+    "Fountain",
+    "7-Jan",
+    "10-Jan",
+    372535.44
   )
 ];
 
@@ -67,27 +105,40 @@ const useStyles = makeStyles(theme => ({
 
 export default function Traffic() {
   const classes = useStyles();
+
+  function formatNumber(value) {
+    return value.toLocaleString();
+  }
+
   return (
     <React.Fragment>
-      <Title>Recent Orders</Title>
+      <Title>Recent Traffic Data</Title>
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell>Date</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Ship To</TableCell>
-            <TableCell>Payment Method</TableCell>
-            <TableCell align="right">Sale Amount</TableCell>
+            <TableCell>Name of Vessel</TableCell>
+            <TableCell>Rotation Number</TableCell>
+            <TableCell align="right">Registered Tonnage (Gross)</TableCell>
+            <TableCell>Agent</TableCell>
+            <TableCell>Berthed</TableCell>
+            <TableCell>Sailed</TableCell>
+            <TableCell align="right">Amount Paid ($)</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map(row => (
             <TableRow key={row.id}>
-              <TableCell>{row.date}</TableCell>
-              <TableCell>{row.name}</TableCell>
-              <TableCell>{row.shipTo}</TableCell>
-              <TableCell>{row.paymentMethod}</TableCell>
-              <TableCell align="right">{row.amount}</TableCell>
+              <TableCell>{row.vesselName}</TableCell>
+              <TableCell>{row.rNo}</TableCell>
+              <TableCell align="right">
+                {formatNumber(row.regTonnage)}
+              </TableCell>
+              <TableCell>{row.agent}</TableCell>
+              <TableCell>{row.berthed}</TableCell>
+              <TableCell>{row.sailed}</TableCell>
+              <TableCell align="right">
+                {formatNumber(row.amountPaid)}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
