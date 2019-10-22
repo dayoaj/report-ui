@@ -29,8 +29,8 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://www.nigerianports.gov.ng/">
-        ICT, Nigerian Ports Authority
+      <Link color="inherit" href="https://twitter.com/dayo_aj">
+        Dayo AJ
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
